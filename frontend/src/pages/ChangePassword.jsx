@@ -48,7 +48,7 @@ const ChangePassword = () => {
        
 
         const response = await axios.patch(
-            "http://localhost:3000/api/auth/change-password",
+            `${import.meta.env.VITE_API_URL}/api/auth/change-password`,
             {
                 currentPassword,
                 newPassword

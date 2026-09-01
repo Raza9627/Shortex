@@ -48,7 +48,7 @@ const Dashboard = () => {
             try {
 
                 const response = await axios.get(
-                    "http://localhost:3000/api/auth/profile",
+                    `${import.meta.env.VITE_API_URL}/api/auth/profile`,
                     {
                         headers: {
                             Authorization: `Bearer ${token}`
@@ -79,7 +79,7 @@ const Dashboard = () => {
 
             try {
                 const response = await axios.get(
-                    "http://localhost:3000/api/urls/analytics",
+                    `${import.meta.env.VITE_API_URL}/api/urls/analytics`,
                     {
                         headers: {
                             Authorization: `Bearer ${token}`
@@ -115,7 +115,7 @@ const Dashboard = () => {
             try {
 
                 const response = await axios.get(
-                    "http://localhost:3000/api/urls/analytics/details",
+                    `${import.meta.env.VITE_API_URL}/api/urls/analytics/details`,
                     {
                         headers: {
                             Authorization: `Bearer ${token}`
@@ -178,7 +178,7 @@ const Dashboard = () => {
             }
 
             const response = await axios.post(
-                "http://localhost:3000/api/urls",
+                `${import.meta.env.VITE_API_URL}/api/urls`,
                 {
                     originalUrl: url.trim()
                 },
@@ -188,7 +188,7 @@ const Dashboard = () => {
                     }
                 }
             );
-            const detailsResponse = await axios.get("http://localhost:3000/api/urls/analytics/details", { headers: { Authorization: `Bearer ${token}` } }); setDetails(detailsResponse.data);
+            const detailsResponse = await axios.get(`${import.meta.env.VITE_API_URL}/api/urls/analytics/details`, { headers: { Authorization: `Bearer ${token}` } }); setDetails(detailsResponse.data);
             toast.success(response.data.message);
 
             console.log("Created URL:", response.data);
@@ -199,7 +199,7 @@ const Dashboard = () => {
 
             // Refresh analytics
             const analyticsResponse = await axios.get(
-                "http://localhost:3000/api/urls/analytics",
+                `${import.meta.env.VITE_API_URL}/api/urls/analytics`,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`
@@ -227,7 +227,7 @@ const Dashboard = () => {
             try {
 
                 const response = await axios.get(
-                    "http://localhost:3000/api/urls/analytics/weekly",
+                    `${import.meta.env.VITE_API_URL}/api/urls/analytics/weekly`,
                     {
                         headers: {
                             Authorization: `Bearer ${token}`
@@ -258,8 +258,8 @@ const Dashboard = () => {
 
         try {
             const endpoint = isActive
-                ? `http://localhost:3000/api/urls/${id}/disable`
-                : `http://localhost:3000/api/urls/${id}/enable`;
+                ? `${import.meta.env.VITE_API_URL}/api/urls/${id}/disable`
+                : `${import.meta.env.VITE_API_URL}/api/urls/${id}/enable`;
 
             await axios.patch(
                 endpoint,
@@ -286,7 +286,7 @@ const Dashboard = () => {
 
             // Update dashboard statistics
             const analyticsResponse = await axios.get(
-                "http://localhost:3000/api/urls/analytics",
+                `${import.meta.env.VITE_API_URL}/api/urls/analytics`,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`
@@ -312,7 +312,7 @@ const Dashboard = () => {
 
         try {
             await axios.delete(
-                `http://localhost:3000/api/urls/${id}`,
+               `${import.meta.env.VITE_API_URL}/api/urls/${id}`,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`
@@ -329,7 +329,7 @@ const Dashboard = () => {
 
             // Refresh analytics
             const analyticsResponse = await axios.get(
-                "http://localhost:3000/api/urls/analytics",
+               `${import.meta.env.VITE_API_URL}/api/urls/analytics`,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`
@@ -360,7 +360,7 @@ const Dashboard = () => {
         setIsUpdating(true);
 
         const response = await axios.patch(
-            "http://localhost:3000/api/auth/profile",
+            `${import.meta.env.VITE_API_URL}/api/auth/profile`,
             {
                 Name: name.trim()
             },
