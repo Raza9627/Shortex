@@ -45,7 +45,7 @@ const ChangePassword = () => {
     try {
         setIsLoading(true);
 
-        console.log("BEFORE AXIOS");
+       
 
         const response = await axios.patch(
             "http://localhost:3000/api/auth/change-password",
@@ -60,8 +60,6 @@ const ChangePassword = () => {
             }
         );
 
-        console.log("AFTER AXIOS");
-        console.log("RESPONSE:", response.data);
 
         toast.success("Password changed successfully");
 
@@ -69,7 +67,7 @@ const ChangePassword = () => {
         setNewPassword("");
         setConfirmPassword("");
 
-        console.log("BEFORE NAVIGATE");
+       
 
         navigate("/dashboard");
 
@@ -77,7 +75,7 @@ const ChangePassword = () => {
 
     } catch (error) {
 
-        console.log("CATCH ERROR");
+    
         console.log(error.response?.data || error.message);
 
         toast.error(

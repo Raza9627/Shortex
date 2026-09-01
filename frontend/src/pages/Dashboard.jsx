@@ -56,8 +56,6 @@ const Dashboard = () => {
                     }
                 );
 
-                console.log("Profile:", response.data);
-
                 setProfile(response.data);
 
             } catch (error) {
@@ -299,7 +297,7 @@ const Dashboard = () => {
             setanalytics(analyticsResponse.data);
 
         } catch (error) {
-            console.log("Toggle error:", error);
+           
 
             toast.error(
                 error.response?.data?.message ||
