@@ -2,11 +2,11 @@
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "https://shortex-backend.vercel.app/api/:path*"
+      "destination": "https://shortex-9k4h.vercel.app/api/:path*"
     },
     {
-      "source": "/:shortCode([A-Za-z0-9]{6})",
-      "destination": "https://shortex-backend.vercel.app/:shortCode"
+      "source": "/:shortCode",
+      "destination": "https://shortex-9k4h.vercel.app/:shortCode"
     },
     {
       "source": "/(.*)",
