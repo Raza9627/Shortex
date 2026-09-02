@@ -1187,12 +1187,12 @@ const Dashboard = () => {
                                             <div className="flex justify-between mb-2">
 
                                                 <a
-                                                    href={`${API_URL}/${link.shortCode}`}
+                                                    href={`https://shortex.vercel.app/${link.shortCode}`}
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                     className="text-sm font-semibold text-purple-600 truncate max-w-[75%]"
                                                 >
-                                                    {`${API_URL}/${link.shortCode}`}
+                                                    {`https://shortex.vercel.app/${link.shortCode}`}
                                                 </a>
                                                 <span className="text-sm font-semibold text-slate-900">
                                                     {link.clicks}
@@ -1332,7 +1332,7 @@ const Dashboard = () => {
 
                                     {filteredDetails.slice(0, details.length).map((link) => {
 
-                                        const shortUrl = `${API_URL}/${link.shortCode}`;
+                                        const shortUrl = `https://shortex.vercel.app/${link.shortCode}`;
 
                                         return (
                                             <tr
@@ -1473,7 +1473,7 @@ const Dashboard = () => {
 
     {filteredDetails.slice(0, details.length).map((link) => {
 
-        const shortUrl = `${API_URL}/${link.shortCode}`;
+        const shortUrl = `https://shortex.vercel.app/${link.shortCode}`;
 
         return (
             <div
